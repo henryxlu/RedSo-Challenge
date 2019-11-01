@@ -64,7 +64,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAY-1q-3lx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="363"/>
+            <point key="canvasLocation" x="1870" y="133"/>
+        </scene>
+        <!--Dynamo View Controller-->
+        <scene sceneID="V7X-en-4sg">
+            <objects>
+                <viewController storyboardIdentifier="DynamoViewController" id="ZBB-wP-eUe" customClass="DynamoViewController" customModule="RedSoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q0J-qf-GvM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="80G-YE-om4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JzH-8A-Ne9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="816"/>
         </scene>
         <!--Ranger View Controller-->
         <scene sceneID="St0-v4-lkM">
@@ -94,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAV-Rx-7nE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="-386"/>
+            <point key="canvasLocation" x="1870" y="-559"/>
         </scene>
     </scenes>
 </document>

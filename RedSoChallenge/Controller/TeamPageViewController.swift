@@ -13,8 +13,7 @@ class TeamPageViewController: UIPageViewController {
     lazy var subVCArray: [UIViewController] = {
         return [self.VCInstance(name: "RangerViewController"),
                 self.VCInstance(name: "ElasticViewController"),
-                //                self.VCInstance(name: "")
-        ]
+                self.VCInstance(name: "DynamoViewController")]
     }()
     
     private func VCInstance(name: String) -> UIViewController {

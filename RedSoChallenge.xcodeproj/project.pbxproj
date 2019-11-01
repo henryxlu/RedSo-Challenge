@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4E17E8236C29AE00A67C41 /* DynamoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E17E7236C29AE00A67C41 /* DynamoViewController.swift */; };
 		BA685F1A236C0A4F000F053E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F19236C0A4F000F053E /* AppDelegate.swift */; };
 		BA685F1C236C0A4F000F053E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F1B236C0A4F000F053E /* SceneDelegate.swift */; };
 		BA685F1E236C0A4F000F053E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F1D236C0A4F000F053E /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA4E17E7236C29AE00A67C41 /* DynamoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamoViewController.swift; sourceTree = "<group>"; };
 		BA685F16236C0A4F000F053E /* RedSoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedSoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA685F19236C0A4F000F053E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA685F1B236C0A4F000F053E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				BA685F33236C0B4F000F053E /* TeamPageViewController.swift */,
 				BA685F35236C0B67000F053E /* RangerViewController.swift */,
 				BA685F38236C1DA7000F053E /* ElasticViewController.swift */,
+				BA4E17E7236C29AE00A67C41 /* DynamoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4E17E8236C29AE00A67C41 /* DynamoViewController.swift in Sources */,
 				BA685F34236C0B4F000F053E /* TeamPageViewController.swift in Sources */,
 				BA685F31236C0AAB000F053E /* Model.swift in Sources */,
 				BA685F39236C1DA7000F053E /* ElasticViewController.swift in Sources */,
