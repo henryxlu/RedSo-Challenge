@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     var staffs = [Staff.Result]()
 
 
-    func getAPI(_ team: String, _ number: Int) {
-        guard let url = URL(string: "https://us-central1-redso-challenge.cloudfunctions.net/catalog?team=\(team)&page=\(number)") else {
+    func getAPI(team: String, page: Int) {
+        guard let url = URL(string: "https://us-central1-redso-challenge.cloudfunctions.net/catalog?team=\(team)&page=\(page)") else {
             return
         }
         session.dataTask(with: url) { (data, response, error) in
