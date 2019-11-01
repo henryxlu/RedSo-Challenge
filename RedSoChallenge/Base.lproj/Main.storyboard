@@ -44,26 +44,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TfB-xp-OmG"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCn-XE-Hv6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043" y="119"/>
         </scene>
-        <!--Ranger View Controller-->
-        <scene sceneID="St0-v4-lkM">
+        <!--Elastic View Controller-->
+        <scene sceneID="h3T-eb-Cqh">
             <objects>
-                <viewController id="b0n-Vy-tEe" customClass="RangerViewController" customModule="RedSoChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h50-FM-es6">
+                <viewController storyboardIdentifier="ElasticViewController" id="O9R-Yh-vTh" customClass="ElasticViewController" customModule="RedSoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6bZ-Qu-rdr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xf8-iR-Isg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAY-1q-3lx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871" y="363"/>
+        </scene>
+        <!--Ranger View Controller-->
+        <scene sceneID="St0-v4-lkM">
+            <objects>
+                <viewController storyboardIdentifier="RangerViewController" id="b0n-Vy-tEe" customClass="RangerViewController" customModule="RedSoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h50-FM-es6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tth-Z5-i6G">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YgJ-21-X1G" firstAttribute="trailing" secondItem="tth-Z5-i6G" secondAttribute="trailing" id="bNA-fS-AGb"/>
+                            <constraint firstItem="tth-Z5-i6G" firstAttribute="top" secondItem="YgJ-21-X1G" secondAttribute="top" id="mgx-j8-KPK"/>
+                            <constraint firstItem="tth-Z5-i6G" firstAttribute="leading" secondItem="YgJ-21-X1G" secondAttribute="leading" id="qpr-5e-Z1l"/>
+                            <constraint firstItem="YgJ-21-X1G" firstAttribute="bottom" secondItem="tth-Z5-i6G" secondAttribute="bottom" id="tDB-wl-cfs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YgJ-21-X1G"/>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="tth-Z5-i6G" id="gSf-1m-vCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAV-Rx-7nE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039" y="-242"/>
+            <point key="canvasLocation" x="1874" y="-386"/>
         </scene>
     </scenes>
 </document>

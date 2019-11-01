@@ -8,12 +8,12 @@
 
 import UIKit
 
-class TeamPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-
+class TeamPageViewController: UIPageViewController {
+    
     lazy var subVCArray: [UIViewController] = {
-        return [self.VCInstance(name: "RangerViewController") //,
-//                self.VCInstance(name: ""),
-//                self.VCInstance(name: "")
+        return [self.VCInstance(name: "RangerViewController"),
+                self.VCInstance(name: "ElasticViewController"),
+                //                self.VCInstance(name: "")
         ]
     }()
     
@@ -23,22 +23,45 @@ class TeamPageViewController: UIPageViewController, UIPageViewControllerDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setPageVC()
+        
+        setPageView()
     }
     
-    func setPageVC() {
+    func setPageView() {
         self.delegate = self
         self.dataSource = self
+        setViewControllers([subVCArray[0]], direction: .forward, animated: true, completion: nil)
     }
+    
+    
+}
 
-    //MARK - UIPageViewControllerDataSource
+extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
+
+    
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subVCArray.count
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        let currentIndex: Int = subVCArray.firstIndex(of: viewController) ?? 0
+        if (currentIndex <= 0) {
+            return nil
+        }
+        return subVCArray[currentIndex - 1]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        let currentIndex: Int = subVCArray.firstIndex(of: viewController) ?? 0
+        if (currentIndex >= subVCArray.count-1 ){
+            return nil
+        }
+        return subVCArray[currentIndex + 1]
+    }
     
     
-    
-
 }
+

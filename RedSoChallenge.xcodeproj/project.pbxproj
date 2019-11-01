@@ -17,6 +17,7 @@
 		BA685F31236C0AAB000F053E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F30236C0AAB000F053E /* Model.swift */; };
 		BA685F34236C0B4F000F053E /* TeamPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F33236C0B4F000F053E /* TeamPageViewController.swift */; };
 		BA685F36236C0B67000F053E /* RangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F35236C0B67000F053E /* RangerViewController.swift */; };
+		BA685F39236C1DA7000F053E /* ElasticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F38236C1DA7000F053E /* ElasticViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BA685F30236C0AAB000F053E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA685F33236C0B4F000F053E /* TeamPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPageViewController.swift; sourceTree = "<group>"; };
 		BA685F35236C0B67000F053E /* RangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerViewController.swift; sourceTree = "<group>"; };
+		BA685F38236C1DA7000F053E /* ElasticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +69,7 @@
 				BA685F19236C0A4F000F053E /* AppDelegate.swift */,
 				BA685F1B236C0A4F000F053E /* SceneDelegate.swift */,
 				BA685F1F236C0A4F000F053E /* Main.storyboard */,
-				BA685F37236C0B6E000F053E /* Cintroller */,
+				BA685F37236C0B6E000F053E /* Controller */,
 				BA685F32236C0AB3000F053E /* Model */,
 				BA685F25236C0A52000F053E /* Assets.xcassets */,
 				BA685F27236C0A52000F053E /* LaunchScreen.storyboard */,
@@ -85,14 +87,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BA685F37236C0B6E000F053E /* Cintroller */ = {
+		BA685F37236C0B6E000F053E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				BA685F1D236C0A4F000F053E /* ViewController.swift */,
 				BA685F33236C0B4F000F053E /* TeamPageViewController.swift */,
 				BA685F35236C0B67000F053E /* RangerViewController.swift */,
+				BA685F38236C1DA7000F053E /* ElasticViewController.swift */,
 			);
-			path = Cintroller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +171,7 @@
 			files = (
 				BA685F34236C0B4F000F053E /* TeamPageViewController.swift in Sources */,
 				BA685F31236C0AAB000F053E /* Model.swift in Sources */,
+				BA685F39236C1DA7000F053E /* ElasticViewController.swift in Sources */,
 				BA685F1E236C0A4F000F053E /* ViewController.swift in Sources */,
 				BA685F1A236C0A4F000F053E /* AppDelegate.swift in Sources */,
 				BA685F36236C0B67000F053E /* RangerViewController.swift in Sources */,
