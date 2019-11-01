@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Team Page View Controller-->
         <scene sceneID="RfF-7d-UR9">
             <objects>
-                <viewController id="5Px-4c-XsT" sceneMemberID="viewController">
+                <viewController id="5Px-4c-XsT" customClass="TeamPageViewController" customModule="RedSoChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vxe-fM-sB1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="1043" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Ranger View Controller-->
         <scene sceneID="St0-v4-lkM">
             <objects>
-                <viewController id="b0n-Vy-tEe" sceneMemberID="viewController">
+                <viewController id="b0n-Vy-tEe" customClass="RangerViewController" customModule="RedSoChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h50-FM-es6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

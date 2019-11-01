@@ -14,7 +14,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    let session = URLSession.shared
+    var staffs = [Staff.Result]()
 
 
+    func getAPI(_ team: String, _ number: Int) {
+        guard let url = URL(string: "https://us-central1-redso-challenge.cloudfunctions.net/catalog?team=\(team)&page=\(number)") else {
+            return
+        }
+        session.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            guard let data = data else { return }
+            let decoder = JSONDecoder()
+            do {
+                try DispatchQueue.main.sync {
+                    self.staffs = try decoder.decode([Staff.Result].self, from: data)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
 }
 
