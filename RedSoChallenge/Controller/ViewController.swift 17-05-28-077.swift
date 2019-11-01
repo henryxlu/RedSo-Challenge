@@ -10,28 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    @IBOutlet weak var pageControl: UIPageControl!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setPageControl()
+        // Do any additional setup after loading the view.
     }
-    
-    func setPageControl() {
-//        let navBarSize = navigationController!.navigationBar.bounds.size
-//        let origin = CGPoint(x:navBarSize.width/2,y:navBarSize.height/2)
-//        pageControl = UIPageControl(frame: CGRect(x: origin.x,y: origin.y,width: 10,height: 10))
-        self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.black
-        self.pageControl.currentPageIndicatorTintColor = UIColor.black
-        self.navigationItem.titleView = self.pageControl
-    }
-    
-    
     
     let session = URLSession.shared
     var staffs = [Staff.Result]()

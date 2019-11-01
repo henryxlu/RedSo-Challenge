@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA4E17E8236C29AE00A67C41 /* DynamoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E17E7236C29AE00A67C41 /* DynamoViewController.swift */; };
+		BA4E181B236C2EEC00A67C41 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BA4E181A236C2EEC00A67C41 /* Readme.md */; };
 		BA685F1A236C0A4F000F053E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F19236C0A4F000F053E /* AppDelegate.swift */; };
 		BA685F1C236C0A4F000F053E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F1B236C0A4F000F053E /* SceneDelegate.swift */; };
 		BA685F1E236C0A4F000F053E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA685F1D236C0A4F000F053E /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		BA4E17E7236C29AE00A67C41 /* DynamoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamoViewController.swift; sourceTree = "<group>"; };
+		BA4E181A236C2EEC00A67C41 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		BA685F16236C0A4F000F053E /* RedSoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedSoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA685F19236C0A4F000F053E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA685F1B236C0A4F000F053E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		BA685F0D236C0A4F000F053E = {
 			isa = PBXGroup;
 			children = (
+				BA4E181A236C2EEC00A67C41 /* Readme.md */,
 				BA685F18236C0A4F000F053E /* RedSoChallenge */,
 				BA685F17236C0A4F000F053E /* Products */,
 			);
@@ -161,6 +164,7 @@
 			files = (
 				BA685F29236C0A52000F053E /* LaunchScreen.storyboard in Resources */,
 				BA685F26236C0A52000F053E /* Assets.xcassets in Resources */,
+				BA4E181B236C2EEC00A67C41 /* Readme.md in Resources */,
 				BA685F21236C0A4F000F053E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
