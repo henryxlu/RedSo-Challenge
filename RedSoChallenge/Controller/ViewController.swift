@@ -33,30 +33,30 @@ class ViewController: UIViewController {
     
     
     
-    let session = URLSession.shared
-    var staffs = [Staff.Result]()
-
-
-    func getAPI(team: String, page: Int) {
-        guard let url = URL(string: "https://us-central1-redso-challenge.cloudfunctions.net/catalog?team=\(team)&page=\(page)") else {
-            return
-        }
-        session.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            do {
-                try DispatchQueue.main.sync {
-                    self.staffs = try decoder.decode([Staff.Result].self, from: data)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    let session = URLSession.shared
+//    var staffs = [Staff.Result]()
+//
+//
+//    func getAPI(team: String, page: Int) {
+//        guard let url = URL(string: "https://us-central1-redso-challenge.cloudfunctions.net/catalog?team=\(team)&page=\(page)") else {
+//            return
+//        }
+//        session.dataTask(with: url) { (data, response, error) in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//                return
+//            }
+//            guard let data = data else { return }
+//            let decoder = JSONDecoder()
+//            do {
+//                try DispatchQueue.main.sync {
+//                    self.staffs = try decoder.decode([Staff.Result].self, from: data)
+//                }
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
     
     
 }

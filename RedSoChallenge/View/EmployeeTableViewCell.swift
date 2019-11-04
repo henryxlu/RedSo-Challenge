@@ -10,6 +10,12 @@ import UIKit
 
 class EmployeeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var employeeImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var expertiseLabel: UILabel!
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
