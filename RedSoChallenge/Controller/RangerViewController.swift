@@ -62,6 +62,7 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
             return employeeCell
         } else {
             let bannerCell = tableView.dequeueReusableCell(withIdentifier: "bannerCell", for: indexPath) as! BannerTableViewCell
+            
             return bannerCell
         }
     

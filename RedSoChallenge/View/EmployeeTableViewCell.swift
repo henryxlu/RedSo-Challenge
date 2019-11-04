@@ -12,8 +12,18 @@ class EmployeeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var employeeImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var positionLabel: UILabel!
-    @IBOutlet weak var expertiseLabel: UILabel!
+    @IBOutlet weak var positionLabel: UILabel!{
+        didSet {
+            self.positionLabel.lineBreakMode = .byWordWrapping
+            self.positionLabel.sizeToFit()
+        }
+    }
+    @IBOutlet weak var expertiseLabel: UILabel! {
+        didSet{
+            self.expertiseLabel.lineBreakMode = .byWordWrapping
+            self.expertiseLabel.sizeToFit()
+        }
+    }
     
 
     override func awakeFromNib() {
