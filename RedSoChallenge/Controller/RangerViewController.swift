@@ -104,7 +104,7 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
             for page in 0...9{
                 APIManager.getTeam(team: "rangers", page: page) { (data) in
                     DispatchQueue.main.sync {
-                        self.staffs = data
+                        self.staffs += data
                     }
                 }
             }
