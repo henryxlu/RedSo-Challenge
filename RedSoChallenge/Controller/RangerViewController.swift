@@ -14,34 +14,62 @@ class RangerViewController: UIViewController {
     
     var staffs : [Staff.Result] = []{
         didSet{
+//            print("old:", oldValue.count, "new:", self.staffs.count)
+            if staffs.count == 0 {
+                return tableview.reloadData()
+            }
             let range = (oldValue.count..<self.staffs.count)
+            
             let insertedIndexList: [IndexPath] =
-                range
-                .map { IndexPath(row: $0, section: 0)}
-//            dprint(range, insertedIndexList.count)
+                range.map { IndexPath(row: $0, section: 0)}
+            //            dprint(range, insertedIndexList.count)
             tableview.insertRows(at: insertedIndexList, with: .automatic)
-//            tableview.reloadData()
+            //            tableview.reloadData()
         }
     }
     var page:Int? = 0
+    var refreshControl : UIRefreshControl!
     
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         APIManager.getTeam(team: "rangers", page: 0) { (data) in
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self.staffs = data
             }
         }
-        
         self.tableview.delegate = self
         self.tableview.dataSource = self
         
+        setRefreshControl()
+        
     }
     
+    func setRefreshControl() {
+        refreshControl = UIRefreshControl()
+        tableview.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(loadData), for: .allEvents)
+    }
+    
+    @objc func loadData(){
+        DispatchQueue.main.async {
+            self.staffs = []
+            self.page = 0
+            APIManager.getTeam(team: "rangers", page: self.page!) { (data) in
+                DispatchQueue.main.async {
+                    
+                    self.staffs = data
+                    self.refreshControl.endRefreshing()
+                }
+
+            }
+            
+            
+        }
+        
+    }
     
 }
 
@@ -106,18 +134,18 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let page = page else {return}
+        guard let page = page else {return dprint("no page")}
         
         let lastElement = staffs.count - 1
-        if indexPath.row == lastElement - 2 {
+        if indexPath.row == lastElement - 2 /*提前加載*/ {
             self.page! += 1
             APIManager.getTeam(team: "rangers", page: page) { (data) in
-                DispatchQueue.main.sync {
-//                    print("page:",self.page!, "data:", data.count)
+                DispatchQueue.main.async {
+                    //print("page:",self.page!, "data:", data.count)
                     if data.count == 0 {
-//                           Void (self.page = nil)
+                        //Void (self.page = nil)
                         return self.page = nil
-                         }
+                    }
                     self.staffs += data
                 }
             }
