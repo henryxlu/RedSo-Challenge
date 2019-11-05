@@ -19,12 +19,11 @@ class RangerViewController: UIViewController {
                 return tableview.reloadData()
             }
             let range = (oldValue.count..<self.staffs.count)
-            
+            /*取得新資料區間*/
             let insertedIndexList: [IndexPath] =
                 range.map { IndexPath(row: $0, section: 0)}
-            //            dprint(range, insertedIndexList.count)
+//                        dprint(range, insertedIndexList.count)
             tableview.insertRows(at: insertedIndexList, with: .automatic)
-            //            tableview.reloadData()
         }
     }
     var page:Int? = 0
@@ -40,11 +39,15 @@ class RangerViewController: UIViewController {
                 self.staffs = data
             }
         }
-        self.tableview.delegate = self
-        self.tableview.dataSource = self
         
+        setTableView()
         setRefreshControl()
         
+    }
+    
+    func setTableView() {
+        self.tableview.delegate = self
+        self.tableview.dataSource = self
     }
     
     func setRefreshControl() {
@@ -59,18 +62,12 @@ class RangerViewController: UIViewController {
             self.page = 0
             APIManager.getTeam(team: "rangers", page: self.page!) { (data) in
                 DispatchQueue.main.async {
-                    
                     self.staffs = data
                     self.refreshControl.endRefreshing()
                 }
-
             }
-            
-            
         }
-        
     }
-    
 }
 
 
@@ -102,6 +99,7 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
                     employeeCell.employeeImage.image = nil
                 }
             }
+            employeeCell.selectionStyle = .none
             return employeeCell
             
         } else {
@@ -116,6 +114,7 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
                     bannerCell.bannerImage.image = nil
                 }
             }
+            bannerCell.selectionStyle = .none
             return bannerCell
         }
         
@@ -129,7 +128,7 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
         if staff.type == "employee" {
             return tableViewHeightSize / 4.5
         } else {
-            return tableViewHeightSize / 4
+            return tableViewHeightSize / 3.5
         }
     }
     

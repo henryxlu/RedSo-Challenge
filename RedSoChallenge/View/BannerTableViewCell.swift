@@ -10,7 +10,11 @@ import UIKit
 
 class BannerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var bannerImage: UIImageView!
+    @IBOutlet weak var bannerImage: UIImageView!{
+        didSet {
+            self.bannerImage.contentMode = .scaleToFill
+        }
+    }
     
     
     override func awakeFromNib() {

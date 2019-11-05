@@ -8,7 +8,17 @@
 
 import UIKit
 
+protocol PageViewControllerDelegate: class {
+    
+    func pageViewController(_ pageViewController: TeamPageViewController, didUpdateNumberOfPage numberOfPage: Int)
+    
+
+    func pageViewController(_ pageViewController: TeamPageViewController, didUpdatePageIndex pageIndex: Int)
+}
+
 class TeamPageViewController: UIPageViewController {
+    
+    weak var pageViewControllerDelegate: PageViewControllerDelegate?
     
     lazy var subVCArray: [UIViewController] = {
         return [self.VCInstance(name: "RangerViewController"),
@@ -16,14 +26,15 @@ class TeamPageViewController: UIPageViewController {
                 self.VCInstance(name: "DynamoViewController")]
     }()
     
-    private func VCInstance(name: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: name)
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setPageView()
+    }
+    
+    private func VCInstance(name: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: name)
     }
     
     func setPageView() {
@@ -61,6 +72,15 @@ extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         return subVCArray[currentIndex + 1]
     }
     
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        let currentViewController: UIViewController = (self.viewControllers?.first)!
+        
+        let currentIndex: Int = self.subVCArray.firstIndex(of: currentViewController)!
+        
+        self.pageViewControllerDelegate?.pageViewController(self, didUpdatePageIndex: currentIndex)
+        
+    }
     
 }
 

@@ -12,13 +12,15 @@ API Model製作
 
 * pageViewController
 [UIPageViewController in Storyboard](https://www.youtube.com/watch?v=fIkfBfsjOUo)
-[實作前導頁](https://medium.com/@mikru168/ios-使用-pageviewcontroller-pagecontrol-來實作前導頁的功能-fbb1ad7e5bad)
+[實作前導頁及翻頁功能](https://medium.com/@mikru168/ios-使用-pageviewcontroller-pagecontrol-來實作前導頁的功能-fbb1ad7e5bad)
 
 3. 介面上顯示兩種不同類型資料
 
 * if/else 判斷type資訊
 
 4. 向下拉動，更新內容
+
+[實作pull to refresh](https://medium.com/@JJeremy.XUE/swift-玩玩-下拉刷新-uirefreshcontrol-a77d09847b3c)
 
 5. 往下滑時，無限加載資料
 
