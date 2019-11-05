@@ -15,12 +15,13 @@ API Model製作
 [實作前導頁](https://medium.com/@mikru168/ios-使用-pageviewcontroller-pagecontrol-來實作前導頁的功能-fbb1ad7e5bad)
 
 3. 介面上顯示兩種不同類型資料
-
-cover array
+if/else
 
 4. 向下拉動，更新內容
 
 5. 往下滑時，無限加載資料
+
+
 
 
 ## 進階功能

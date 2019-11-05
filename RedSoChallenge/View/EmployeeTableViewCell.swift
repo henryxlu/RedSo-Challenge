@@ -10,7 +10,12 @@ import UIKit
 
 class EmployeeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var employeeImage: UIImageView!
+    @IBOutlet weak var employeeImage: UIImageView!{
+        didSet {
+            self.employeeImage.contentMode = .scaleAspectFit
+            self.employeeImage.layer.cornerRadius = self.employeeImage.frame.height / 2
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!{
         didSet {
