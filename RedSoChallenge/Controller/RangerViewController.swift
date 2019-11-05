@@ -14,9 +14,16 @@ class RangerViewController: UIViewController {
     
     var staffs : [Staff.Result] = []{
         didSet{
-            tableview.reloadData()
+            let range = (oldValue.count..<self.staffs.count)
+            let insertedIndexList: [IndexPath] =
+                range
+                .map { IndexPath(row: $0, section: 0)}
+//            dprint(range, insertedIndexList.count)
+            tableview.insertRows(at: insertedIndexList, with: .automatic)
+//            tableview.reloadData()
         }
     }
+    var page:Int? = 0
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -32,9 +39,9 @@ class RangerViewController: UIViewController {
         
         self.tableview.delegate = self
         self.tableview.dataSource = self
-    
+        
     }
-
+    
     
 }
 
@@ -87,7 +94,7 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         let staff = staffs[indexPath.row]
         let tableViewHeightSize = tableView.frame.size.height
         
@@ -99,15 +106,22 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let page = page else {return}
+        
         let lastElement = staffs.count - 1
-        if indexPath.row == lastElement {
-            for page in 0...9{
-                APIManager.getTeam(team: "rangers", page: page) { (data) in
-                    DispatchQueue.main.sync {
-                        self.staffs += data
-                    }
+        if indexPath.row == lastElement - 2 {
+            self.page! += 1
+            APIManager.getTeam(team: "rangers", page: page) { (data) in
+                DispatchQueue.main.sync {
+//                    print("page:",self.page!, "data:", data.count)
+                    if data.count == 0 {
+//                           Void (self.page = nil)
+                        return self.page = nil
+                         }
+                    self.staffs += data
                 }
             }
         }
     }
+    
 }
