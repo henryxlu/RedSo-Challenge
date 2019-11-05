@@ -32,8 +32,9 @@ class RangerViewController: UIViewController {
         
         self.tableview.delegate = self
         self.tableview.dataSource = self
-        
+    
     }
+
     
 }
 
@@ -91,11 +92,22 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
         let tableViewHeightSize = tableView.frame.size.height
         
         if staff.type == "employee" {
-            let height = tableViewHeightSize / 4
-            return height
+            return tableViewHeightSize / 4.5
         } else {
-            let height = tableViewHeightSize / 4
-            return height
+            return tableViewHeightSize / 4
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = staffs.count - 1
+        if indexPath.row == lastElement {
+            for page in 0...9{
+                APIManager.getTeam(team: "rangers", page: page) { (data) in
+                    DispatchQueue.main.sync {
+                        self.staffs = data
+                    }
+                }
+            }
         }
     }
 }
