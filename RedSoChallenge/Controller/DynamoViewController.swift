@@ -46,6 +46,7 @@ class DynamoViewController: UIViewController {
     func setTableView() {
         self.tableview.delegate = self
         self.tableview.dataSource = self
+        self.tableview.backgroundColor = #colorLiteral(red: 0, green: 0.01775177382, blue: 0.1321369112, alpha: 1)
     }
     
     func setRefreshControl() {
@@ -112,7 +113,6 @@ extension DynamoViewController: UITableViewDelegate, UITableViewDataSource {
             bannerCell.selectionStyle = .none
             return bannerCell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -145,5 +145,4 @@ extension DynamoViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
 }

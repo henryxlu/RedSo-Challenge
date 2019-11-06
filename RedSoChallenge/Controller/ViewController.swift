@@ -17,7 +17,7 @@ class ViewController: UIViewController, ChangeUnderlineDelegate {
     
     
     func moveUnderline(currentPage: Int) {
-
+        
         guard (0..<3).contains(currentPage) else {
             return
         }
@@ -39,7 +39,6 @@ class ViewController: UIViewController, ChangeUnderlineDelegate {
         
     }
     
-
     
     @IBOutlet weak var rangerButton: UIButton!
     @IBOutlet weak var elasticButton: UIButton!
@@ -49,14 +48,13 @@ class ViewController: UIViewController, ChangeUnderlineDelegate {
     
     var delegate: ChangePageDelegate?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.underLine.frame.size.width = self.rangerButton.frame.size.width
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0.01775177382, blue: 0.1321369112, alpha: 1)
     }
-    
-    
     
     @IBAction func buttonCollect(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2) {

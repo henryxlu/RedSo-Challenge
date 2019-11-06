@@ -26,21 +26,27 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvd-1I-PWt">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="35"/>
-                                        <state key="normal" title="Rangers"/>
+                                        <state key="normal" title="Rangers">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="buttonCollect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dsd-NL-AEB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgK-A7-1NU">
                                         <rect key="frame" x="138" y="0.0" width="138" height="35"/>
-                                        <state key="normal" title="Elastic"/>
+                                        <state key="normal" title="Elastic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="buttonCollect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z5F-2v-mbJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXq-vg-qDR">
                                         <rect key="frame" x="276" y="0.0" width="138" height="35"/>
-                                        <state key="normal" title="Dynamo"/>
+                                        <state key="normal" title="Dynamo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="buttonCollect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EHQ-Vs-aho"/>
                                         </connections>
@@ -74,7 +80,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="RedSo" id="6rC-kO-h5P"/>
+                    <navigationItem key="navigationItem" title="RedSo" id="MSJ-Uc-TPu"/>
                     <connections>
                         <outlet property="dynamoButton" destination="cXq-vg-qDR" id="Lvp-ZW-uKl"/>
                         <outlet property="elasticButton" destination="LgK-A7-1NU" id="HoF-QU-3u0"/>

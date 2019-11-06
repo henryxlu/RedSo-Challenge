@@ -30,15 +30,12 @@ class TeamPageViewController: UIPageViewController, ChangePageDelegate {
                 self.VCInstance(name: "DynamoViewController")]
     }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setPageView()
 
     }
 
-    
     
     private func VCInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: name)
@@ -49,14 +46,10 @@ class TeamPageViewController: UIPageViewController, ChangePageDelegate {
         self.dataSource = self
         setViewControllers([subVCArray[0]], direction: .forward, animated: true, completion: nil)
     }
-    
-    
 }
-
 
 extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subVCArray.count

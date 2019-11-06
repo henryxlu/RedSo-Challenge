@@ -48,6 +48,7 @@ class ElasticViewController: UIViewController {
     func setTableView() {
         self.tableview.delegate = self
         self.tableview.dataSource = self
+        self.tableview.backgroundColor = #colorLiteral(red: 0, green: 0.01775177382, blue: 0.1321369112, alpha: 1)
     }
     
     func setRefreshControl() {
@@ -68,7 +69,6 @@ class ElasticViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension ElasticViewController: UITableViewDelegate, UITableViewDataSource {
