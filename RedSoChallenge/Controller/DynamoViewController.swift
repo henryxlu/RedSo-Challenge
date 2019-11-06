@@ -121,7 +121,7 @@ extension DynamoViewController: UITableViewDelegate, UITableViewDataSource {
         let tableViewHeightSize = tableView.frame.size.height
         
         if staff.type == "employee" {
-            return tableViewHeightSize / 4.5
+            return tableViewHeightSize / 4
         } else {
             return tableViewHeightSize / 3.5
         }

@@ -8,45 +8,36 @@
 
 import UIKit
 
+protocol MainVCDelegate {
+    func buttonToPage(indexPath: Int)
+}
+
+
 class ViewController: UIViewController {
 
+
+    @IBOutlet weak var rangerVCButton: UIButton!
     
-    @IBOutlet weak var pageControl: UIPageControl!
-    
+    var delegate: MainVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setPageControl()
     }
     
-    func setPageControl() {
-//        self.pageControl.numberOfPages = 3
-        self.pageControl.currentPage = 0
-//        self.pageControl.tintColor = UIColor.blue
-        self.pageControl.backgroundColor = UIColor.green
-        self.pageControl.pageIndicatorTintColor = UIColor.black
-        self.pageControl.currentPageIndicatorTintColor = UIColor.white
-//        self.navigationItem.titleView = self.pageControl
+    @IBAction func buttonCollect(_ sender: UIButton) {
+        delegate?.buttonToPage(indexPath: sender.tag)
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pageViewController = segue.destination as? TeamPageViewController {
-            pageViewController.pageViewControllerDelegate = self
+            delegate = pageViewController
         }
     }
     
 }
 
-extension ViewController: PageViewControllerDelegate {
-    func pageViewController(_ pageViewController: TeamPageViewController, didUpdateNumberOfPage numberOfPage: Int) {
-        self.pageControl.numberOfPages = numberOfPage
-    }
-    
-    func pageViewController(_ pageViewController: TeamPageViewController, didUpdatePageIndex pageIndex: Int) {
-        self.pageControl.currentPage = pageIndex
-    }
-    
-    
-}
+
 

@@ -13,10 +13,12 @@ API Model製作
 * pageViewController
 [UIPageViewController in Storyboard](https://www.youtube.com/watch?v=fIkfBfsjOUo)
 [實作前導頁及翻頁功能](https://medium.com/@mikru168/ios-使用-pageviewcontroller-pagecontrol-來實作前導頁的功能-fbb1ad7e5bad)
+[pageViewController換頁by button](https://stackoverflow.com/questions/55847188/swift-change-uipageviewcontroller-view-on-button-click)
+[pageViewController換頁by button.2](https://stackoverflow.com/questions/48787043/how-to-change-uipageviewcontroller-vcs-by-uibutton-swift-4-0)
 
 3. 介面上顯示兩種不同類型資料
 
-* if/else 判斷type資訊
+* if/else 判斷type的value
 
 4. 向下拉動，更新內容
 
