@@ -20,10 +20,8 @@ class TeamPageViewController: UIPageViewController, ChangePageDelegate {
             let pageVC = subVCArray[indexPath]
 
             self.setViewControllers([pageVC], direction: .forward, animated: false, completion: nil)
-
     }
     
-
     lazy var subVCArray: [UIViewController] = {
         return [self.VCInstance(name: "RangerViewController"),
                 self.VCInstance(name: "ElasticViewController"),
@@ -33,15 +31,13 @@ class TeamPageViewController: UIPageViewController, ChangePageDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPageView()
-
     }
 
-    
     private func VCInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: name)
     }
     
-    func setPageView() {
+    private func setPageView() {
         self.delegate = self
         self.dataSource = self
         setViewControllers([subVCArray[0]], direction: .forward, animated: true, completion: nil)
@@ -49,7 +45,6 @@ class TeamPageViewController: UIPageViewController, ChangePageDelegate {
 }
 
 extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subVCArray.count
@@ -60,7 +55,6 @@ extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         let currentIndex: Int = subVCArray.firstIndex(of: viewController) ?? 0
 
         self.underlineDelegate?.moveUnderline(currentPage: currentIndex - 1)
-
         if (currentIndex <= 0) {
             return nil
         }
@@ -72,13 +66,10 @@ extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         let currentIndex: Int = subVCArray.firstIndex(of: viewController) ?? 0
 
         self.underlineDelegate?.moveUnderline(currentPage: currentIndex + 1)
-        
-        if (currentIndex >= subVCArray.count-1 ){
+        if (currentIndex >= subVCArray.count-1 ) {
             return nil
         }
         return subVCArray[currentIndex + 1]
     }
-    
-    
 }
 

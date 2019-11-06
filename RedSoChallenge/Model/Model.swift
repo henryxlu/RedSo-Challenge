@@ -8,9 +8,6 @@
 
 import Foundation
 
-
-
-
 struct Staff: Codable {
     let results: [Result]
     

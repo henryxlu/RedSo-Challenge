@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class APIManager {
     
     static func getTeam(team: String, page: Int, completion: @escaping ([Staff.Result]) -> Void ) {
@@ -31,7 +29,6 @@ class APIManager {
             }
         }.resume()
     }
-    
 }
 
 

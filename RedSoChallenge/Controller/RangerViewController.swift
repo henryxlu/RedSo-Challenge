@@ -11,10 +11,11 @@ import Kingfisher
 
 class RangerViewController: UIViewController {
     
-    
     var staffs : [Staff.Result] = []{
         didSet{
-//            print("old:", oldValue.count, "new:", self.staffs.count)
+            #if DEBUG
+            print("old:", oldValue.count, "new:", self.staffs.count)
+            #endif
             if staffs.count == 0 {
                 return tableview.reloadData()
             }
@@ -22,7 +23,9 @@ class RangerViewController: UIViewController {
             /*取得新資料區間*/
             let insertedIndexList: [IndexPath] =
                 range.map { IndexPath(row: $0, section: 0)}
-//                        dprint(range, insertedIndexList.count)
+            #if DEBUG
+            dprint(range, insertedIndexList.count)
+            #endif
             tableview.insertRows(at: insertedIndexList, with: .automatic)
         }
     }
@@ -33,31 +36,28 @@ class RangerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         APIManager.getTeam(team: "rangers", page: 0) { (data) in
             DispatchQueue.main.async {
                 self.staffs = data
             }
         }
-        
         setTableView()
         setRefreshControl()
-        
     }
     
-    func setTableView() {
+    private func setTableView() {
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.backgroundColor = #colorLiteral(red: 0, green: 0.01775177382, blue: 0.1321369112, alpha: 1)
     }
     
-    func setRefreshControl() {
+    private func setRefreshControl() {
         refreshControl = UIRefreshControl()
         tableview.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(loadData), for: .allEvents)
     }
     
-    @objc func loadData(){
+    @objc private func loadData() {
         DispatchQueue.main.async {
             self.staffs = []
             self.page = 0
@@ -71,10 +71,7 @@ class RangerViewController: UIViewController {
     }
 }
 
-
 extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return staffs.count
@@ -83,7 +80,6 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let staff = staffs[indexPath.row]
-        
         
         if staff.type == "employee" {
             let employeeCell = tableView.dequeueReusableCell(withIdentifier: "employeeCell", for: indexPath) as! EmployeeTableViewCell
@@ -102,7 +98,6 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
             }
             employeeCell.selectionStyle = .none
             return employeeCell
-            
         } else {
             let bannerCell = tableView.dequeueReusableCell(withIdentifier: "bannerCell", for: indexPath) as! BannerTableViewCell
             let url = URL(string: staff.url!)!
@@ -118,7 +113,6 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
             bannerCell.selectionStyle = .none
             return bannerCell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -141,9 +135,10 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
             self.page! += 1
             APIManager.getTeam(team: "rangers", page: page) { (data) in
                 DispatchQueue.main.async {
-                    //print("page:",self.page!, "data:", data.count)
+                    #if DEBUG
+                    print("page:",self.page!, "data:", data.count)
+                    #endif
                     if data.count == 0 {
-                        //Void (self.page = nil)
                         return self.page = nil
                     }
                     self.staffs += data
@@ -151,5 +146,4 @@ extension RangerViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
 }
