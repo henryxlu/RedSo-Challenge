@@ -1,19 +1,24 @@
-# Readme
+# RedSo面試題
 
 ## 功能
 1. API串接
 
 API Model製作
-* 將API管理寫成escaping clourse
-[URLsession-get](https://medium.com/@jerrywang0420/urlsession-教學-swift-3-ios-part-2-a17b2d4cc056)
+將API 寫在file提供給三個viewController使用
 
+將API管理寫成escaping clourse
+[URLsession-get](https://medium.com/@jerrywang0420/urlsession-教學-swift-3-ios-part-2-a17b2d4cc056)
 
 2. 3個分頁(Rangers, Elastic, Dynamo))
 
-* pageViewController
+UIPageView製作分頁
+
+pageViewController
 [UIPageViewController in Storyboard](https://www.youtube.com/watch?v=fIkfBfsjOUo)
+
 [實作前導頁及翻頁功能](https://medium.com/@mikru168/ios-使用-pageviewcontroller-pagecontrol-來實作前導頁的功能-fbb1ad7e5bad)
 [pageViewController換頁by button](https://stackoverflow.com/questions/55847188/swift-change-uipageviewcontroller-view-on-button-click)
+
 [pageViewController換頁by button.2](https://stackoverflow.com/questions/48787043/how-to-change-uipageviewcontroller-vcs-by-uibutton-swift-4-0)
 
 3. 介面上顯示兩種不同類型資料
