@@ -1,7 +1,7 @@
 # RedSo面試題
 
 ## 功能
-1. API串接
+### 1. API串接
 
 API Model製作
 將API 寫在file提供給三個viewController使用
@@ -11,7 +11,7 @@ API Model製作
 將API管理寫成escaping clourse
 [URLsession-get](https://medium.com/@jerrywang0420/urlsession-教學-swift-3-ios-part-2-a17b2d4cc056)
 
-2. 3個分頁(Rangers, Elastic, Dynamo))
+### 2. 3個分頁(Rangers, Elastic, Dynamo))
 
 UIPageView製作三個分頁
 
@@ -24,17 +24,17 @@ UIPageView製作三個分頁
 
 [pageViewController換頁by button.2](https://stackoverflow.com/questions/48787043/how-to-change-uipageviewcontroller-vcs-by-uibutton-swift-4-0)
 
-3. 介面上顯示兩種不同類型資料
+### 3. 介面上顯示兩種不同類型資料
 
 * if/else 判斷type的value
 
-4. 向下拉動，更新內容
+### 4. 向下拉動，更新內容
 
 參考資料：
 
 [實作pull to refresh](https://medium.com/@JJeremy.XUE/swift-玩玩-下拉刷新-uirefreshcontrol-a77d09847b3c)
 
-5. 往下滑時，無限加載資料
+### 5. 往下滑時，無限加載資料
 
 參考資料：
 
@@ -42,11 +42,11 @@ UIPageView製作三個分頁
 
 
 ## 進階功能
-1. 設計介面
+### 1. 設計介面
 依照圖示去模仿製作
-2. 左右滑動換頁
+### 2. 左右滑動換頁
 參考資料：
 
 [change underline position](https://stackoverflow.com/questions/58165343/change-position-uibutton-with-animation-swift)
-3. 離線存取
-4. 其他
+### 3. 離線存取
+### 4. 其他
