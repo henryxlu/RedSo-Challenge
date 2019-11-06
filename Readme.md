@@ -1,6 +1,8 @@
 # RedSo面試題
 
 ## 功能
+
+![](https://github.com/henryxlu/RedSo-Challenge/blob/master/RedSo%20Challenge.gif?raw=true)
 ### 1. API串接
 
 API Model製作
