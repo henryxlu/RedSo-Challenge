@@ -15,18 +15,25 @@ protocol MainVCDelegate {
 
 class ViewController: UIViewController {
 
-
-    @IBOutlet weak var rangerVCButton: UIButton!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var underLine: UIView!
     
     var delegate: MainVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.underLine.frame.size.width = self.button.frame.size.width
     }
     
+    
+    
     @IBAction func buttonCollect(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2) {
+            self.underLine.frame.origin.x = sender.frame.origin.x
+        }
         delegate?.buttonToPage(indexPath: sender.tag)
+        
     }
     
     
@@ -36,6 +43,7 @@ class ViewController: UIViewController {
             delegate = pageViewController
         }
     }
+    
     
 }
 

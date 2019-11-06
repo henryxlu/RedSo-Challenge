@@ -18,9 +18,7 @@ class TeamPageViewController: UIPageViewController, MainVCDelegate {
 
     }
     
-    
 
-    
     lazy var subVCArray: [UIViewController] = {
         return [self.VCInstance(name: "RangerViewController"),
                 self.VCInstance(name: "ElasticViewController"),
@@ -49,6 +47,7 @@ class TeamPageViewController: UIPageViewController, MainVCDelegate {
     
     
 }
+
 
 extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
