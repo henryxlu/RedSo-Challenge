@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgv-C1-u2z">
-                                <rect key="frame" x="0.0" y="123" width="414" height="739"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="719"/>
                                 <connections>
                                     <segue destination="GAg-Eq-sPz" kind="embed" id="7dJ-Rb-536"/>
                                 </connections>
@@ -50,17 +50,22 @@
                                     <constraint firstAttribute="height" constant="35" id="Dtq-ax-CXP"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-jF-BTQ">
-                                <rect key="frame" x="0.0" y="123" width="201" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-jF-BTQ">
+                                <rect key="frame" x="0.0" y="123" width="138" height="20"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="at2-R9-nvo"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pgv-C1-u2z" firstAttribute="top" secondItem="PPS-w4-ofZ" secondAttribute="bottom" id="72n-dv-7hY"/>
                             <constraint firstItem="PPS-w4-ofZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fdb-Mh-F6z"/>
+                            <constraint firstItem="AAO-jF-BTQ" firstAttribute="trailing" secondItem="Pvd-1I-PWt" secondAttribute="trailing" id="SQh-A4-RgE"/>
+                            <constraint firstItem="AAO-jF-BTQ" firstAttribute="top" secondItem="PPS-w4-ofZ" secondAttribute="bottom" id="WQx-8v-Uel"/>
+                            <constraint firstItem="AAO-jF-BTQ" firstAttribute="leading" secondItem="PPS-w4-ofZ" secondAttribute="leading" id="Zm4-jb-bkK"/>
                             <constraint firstItem="PPS-w4-ofZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="f2k-4M-Xf1"/>
+                            <constraint firstItem="pgv-C1-u2z" firstAttribute="top" secondItem="AAO-jF-BTQ" secondAttribute="bottom" id="l2C-VE-sCF"/>
                             <constraint firstItem="pgv-C1-u2z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mnZ-Kh-k5E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PPS-w4-ofZ" secondAttribute="trailing" id="n04-cR-vlV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pgv-C1-u2z" secondAttribute="bottom" id="sgH-xJ-ZuB"/>
@@ -71,7 +76,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="RedSo" id="6rC-kO-h5P"/>
                     <connections>
-                        <outlet property="button" destination="Pvd-1I-PWt" id="MPV-ja-3K5"/>
+                        <outlet property="dynamoButton" destination="cXq-vg-qDR" id="Lvp-ZW-uKl"/>
+                        <outlet property="elasticButton" destination="LgK-A7-1NU" id="HoF-QU-3u0"/>
+                        <outlet property="rangerButton" destination="Pvd-1I-PWt" id="N1g-sV-zee"/>
                         <outlet property="underLine" destination="AAO-jF-BTQ" id="7Pz-X4-Ddq"/>
                     </connections>
                 </viewController>

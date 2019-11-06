@@ -8,22 +8,52 @@
 
 import UIKit
 
-protocol MainVCDelegate {
-    func buttonToPage(indexPath: Int)
+protocol ChangePageDelegate {
+    func buttonChangePage(indexPath: Int)
 }
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ChangeUnderlineDelegate {
+    
+    
+    func moveUnderline(currentPage: Int) {
 
-    @IBOutlet weak var button: UIButton!
+        guard (0..<3).contains(currentPage) else {
+            return
+        }
+        UIView.animate(withDuration: 0.2) {
+            var underLineOrigin = self.underLine.frame.origin.x
+            
+            switch currentPage {
+            case 0:
+                underLineOrigin = self.rangerButton.frame.origin.x
+            case 1:
+                underLineOrigin = self.elasticButton.frame.origin.x
+            case 2:
+                underLineOrigin = self.dynamoButton.frame.origin.x
+            default:
+                break
+            }
+            self.underLine.frame.origin.x = underLineOrigin
+        }
+        
+    }
+    
+
+    
+    @IBOutlet weak var rangerButton: UIButton!
+    @IBOutlet weak var elasticButton: UIButton!
+    @IBOutlet weak var dynamoButton: UIButton!
+    
     @IBOutlet weak var underLine: UIView!
     
-    var delegate: MainVCDelegate?
+    var delegate: ChangePageDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.underLine.frame.size.width = self.button.frame.size.width
+        self.underLine.frame.size.width = self.rangerButton.frame.size.width
+        
     }
     
     
@@ -32,7 +62,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.underLine.frame.origin.x = sender.frame.origin.x
         }
-        delegate?.buttonToPage(indexPath: sender.tag)
+        delegate?.buttonChangePage(indexPath: sender.tag)
         
     }
     
@@ -41,6 +71,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pageViewController = segue.destination as? TeamPageViewController {
             delegate = pageViewController
+            pageViewController.underlineDelegate = self
         }
     }
     

@@ -8,10 +8,15 @@
 
 import UIKit
 
-class TeamPageViewController: UIPageViewController, MainVCDelegate {
+protocol ChangeUnderlineDelegate {
+    func moveUnderline(currentPage: Int)
+}
+
+class TeamPageViewController: UIPageViewController, ChangePageDelegate {
     
+    var underlineDelegate: ChangeUnderlineDelegate?
     
-    func buttonToPage(indexPath: Int) {
+    func buttonChangePage(indexPath: Int) {
             let pageVC = subVCArray[indexPath]
 
             self.setViewControllers([pageVC], direction: .forward, animated: false, completion: nil)
@@ -60,6 +65,9 @@ extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewCont
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         let currentIndex: Int = subVCArray.firstIndex(of: viewController) ?? 0
+
+        self.underlineDelegate?.moveUnderline(currentPage: currentIndex - 1)
+
         if (currentIndex <= 0) {
             return nil
         }
@@ -69,6 +77,9 @@ extension TeamPageViewController: UIPageViewControllerDataSource, UIPageViewCont
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let currentIndex: Int = subVCArray.firstIndex(of: viewController) ?? 0
+
+        self.underlineDelegate?.moveUnderline(currentPage: currentIndex + 1)
+        
         if (currentIndex >= subVCArray.count-1 ){
             return nil
         }
