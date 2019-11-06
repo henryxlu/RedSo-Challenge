@@ -6,14 +6,17 @@
 API Model製作
 將API 寫在file提供給三個viewController使用
 
+參考資料：
+
 將API管理寫成escaping clourse
 [URLsession-get](https://medium.com/@jerrywang0420/urlsession-教學-swift-3-ios-part-2-a17b2d4cc056)
 
 2. 3個分頁(Rangers, Elastic, Dynamo))
 
-UIPageView製作分頁
+UIPageView製作三個分頁
 
-pageViewController
+參考資料：
+
 [UIPageViewController in Storyboard](https://www.youtube.com/watch?v=fIkfBfsjOUo)
 
 [實作前導頁及翻頁功能](https://medium.com/@mikru168/ios-使用-pageviewcontroller-pagecontrol-來實作前導頁的功能-fbb1ad7e5bad)
@@ -27,16 +30,23 @@ pageViewController
 
 4. 向下拉動，更新內容
 
+參考資料：
+
 [實作pull to refresh](https://medium.com/@JJeremy.XUE/swift-玩玩-下拉刷新-uirefreshcontrol-a77d09847b3c)
 
 5. 往下滑時，無限加載資料
+
+參考資料：
 
 [load data-TableView willDisplayCell](https://stackoverflow.com/questions/34588837/uitableview-load-more-when-scrolling-to-bottom)
 
 
 ## 進階功能
 1. 設計介面
+依照圖示去模仿製作
 2. 左右滑動換頁
+參考資料：
+
 [change underline position](https://stackoverflow.com/questions/58165343/change-position-uibutton-with-animation-swift)
 3. 離線存取
 4. 其他
