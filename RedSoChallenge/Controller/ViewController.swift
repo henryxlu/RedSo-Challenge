@@ -53,7 +53,7 @@ class ViewController: UIViewController, ChangeUnderlineDelegate {
         super.viewDidLoad()
         
         self.underLine.frame.size.width = self.rangerButton.frame.size.width
-        
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0.01775177382, blue: 0.1321369112, alpha: 1)
     }
     
     

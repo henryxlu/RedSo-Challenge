@@ -33,7 +33,7 @@ class EmployeeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = #colorLiteral(red: 0, green: 0.01775177382, blue: 0.1321369112, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
